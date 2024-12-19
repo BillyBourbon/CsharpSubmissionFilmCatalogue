@@ -36,6 +36,7 @@
             Column5 = new DataGridViewTextBoxColumn();
             btnPageLeftViewFilms = new Button();
             btnPageRightViewFilms = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvFilmsView).BeginInit();
             SuspendLayout();
             // 
@@ -43,10 +44,10 @@
             // 
             dgvFilmsView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvFilmsView.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            dgvFilmsView.Location = new Point(59, 12);
+            dgvFilmsView.Location = new Point(56, 61);
             dgvFilmsView.Name = "dgvFilmsView";
             dgvFilmsView.RowHeadersWidth = 51;
-            dgvFilmsView.Size = new Size(678, 437);
+            dgvFilmsView.Size = new Size(678, 388);
             dgvFilmsView.TabIndex = 0;
             dgvFilmsView.CellContentClick += dgvFilmsView_CellContentClick;
             // 
@@ -87,9 +88,9 @@
             // 
             // btnPageLeftViewFilms
             // 
-            btnPageLeftViewFilms.Location = new Point(3, 12);
+            btnPageLeftViewFilms.Location = new Point(3, 61);
             btnPageLeftViewFilms.Name = "btnPageLeftViewFilms";
-            btnPageLeftViewFilms.Size = new Size(57, 437);
+            btnPageLeftViewFilms.Size = new Size(57, 388);
             btnPageLeftViewFilms.TabIndex = 1;
             btnPageLeftViewFilms.Text = "<";
             btnPageLeftViewFilms.UseVisualStyleBackColor = true;
@@ -97,19 +98,29 @@
             // 
             // btnPageRightViewFilms
             // 
-            btnPageRightViewFilms.Location = new Point(733, 12);
+            btnPageRightViewFilms.Location = new Point(733, 61);
             btnPageRightViewFilms.Name = "btnPageRightViewFilms";
-            btnPageRightViewFilms.Size = new Size(67, 437);
+            btnPageRightViewFilms.Size = new Size(67, 388);
             btnPageRightViewFilms.TabIndex = 2;
             btnPageRightViewFilms.Text = ">";
             btnPageRightViewFilms.UseVisualStyleBackColor = true;
             btnPageRightViewFilms.Click += btnPageRightViewFilms_Click;
+            // 
+            // label1
+            // 
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(774, 49);
+            label1.TabIndex = 3;
+            label1.Text = "Double click a row to view the detailed infomation for a film\r\n";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // ViewFilms
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(btnPageRightViewFilms);
             Controls.Add(btnPageLeftViewFilms);
             Controls.Add(dgvFilmsView);
@@ -129,5 +140,6 @@
         private DataGridViewTextBoxColumn Column5;
         private Button btnPageLeftViewFilms;
         private Button btnPageRightViewFilms;
+        private Label label1;
     }
 }

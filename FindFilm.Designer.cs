@@ -450,20 +450,20 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(66, 23);
+            label3.Location = new Point(73, 23);
             label3.Name = "label3";
-            label3.Size = new Size(45, 20);
+            label3.Size = new Size(38, 20);
             label3.TabIndex = 3;
-            label3.Text = "Title :";
+            label3.Text = "Title";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(551, 123);
+            label2.Location = new Point(562, 123);
             label2.Name = "label2";
-            label2.Size = new Size(46, 20);
+            label2.Size = new Size(35, 20);
             label2.TabIndex = 2;
-            label2.Text = "Plot : ";
+            label2.Text = "Plot";
             // 
             // lblDescription
             // 

@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Welcome to the Film/TV Show finder
+
+Use the buttons above to navigate the app
+
+'Find A Film' will open up the search panel for you to look up a film or TV show
+
+'View Stored Films' will open up a table which you can browse to view your past searches
+
+</value>
+  </data>
 </root>

@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             gbNav = new GroupBox();
             btnViewFilmDB = new Button();
             btnFindFilm = new Button();
+            label1 = new Label();
             gbNav.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,11 +66,21 @@
             btnFindFilm.UseVisualStyleBackColor = true;
             btnFindFilm.Click += btnFindFilm_Click;
             // 
+            // label1
+            // 
+            label1.Location = new Point(12, 109);
+            label1.Name = "label1";
+            label1.Size = new Size(776, 332);
+            label1.TabIndex = 1;
+            label1.Text = resources.GetString("label1.Text");
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(gbNav);
             Name = "MainMenu";
             Text = "Main Menu";
@@ -82,5 +94,6 @@
         private Button btnFindFilm;
         private Button btnFindFilmByActor;
         private Button btnViewFilmDB;
+        private Label label1;
     }
 }

@@ -79,7 +79,7 @@
             // 
             dgvRatingsFilmDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRatingsFilmDetails.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dgvRatingsFilmDetails.Location = new Point(617, 281);
+            dgvRatingsFilmDetails.Location = new Point(596, 266);
             dgvRatingsFilmDetails.Name = "dgvRatingsFilmDetails";
             dgvRatingsFilmDetails.RowHeadersWidth = 51;
             dgvRatingsFilmDetails.Size = new Size(353, 139);
@@ -101,12 +101,12 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(774, 243);
+            label1.Location = new Point(596, 223);
             label1.Name = "label1";
-            label1.Size = new Size(58, 20);
+            label1.Size = new Size(353, 40);
             label1.TabIndex = 1;
             label1.Text = "Ratings";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // gbData
             // 
@@ -448,16 +448,16 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(66, 23);
+            label3.Location = new Point(73, 23);
             label3.Name = "label3";
-            label3.Size = new Size(45, 20);
+            label3.Size = new Size(38, 20);
             label3.TabIndex = 3;
-            label3.Text = "Title :";
+            label3.Text = "Title";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(617, 23);
+            label2.Location = new Point(596, 23);
             label2.Name = "label2";
             label2.Size = new Size(46, 20);
             label2.TabIndex = 2;
@@ -466,7 +466,7 @@
             // lblDescription
             // 
             lblDescription.AutoSize = true;
-            lblDescription.Location = new Point(679, 23);
+            lblDescription.Location = new Point(648, 23);
             lblDescription.MaximumSize = new Size(300, 0);
             lblDescription.Name = "lblDescription";
             lblDescription.Size = new Size(0, 20);
