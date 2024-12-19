@@ -487,7 +487,7 @@
             ClientSize = new Size(1000, 450);
             Controls.Add(gbData);
             Name = "FilmDetails";
-            Text = "FilmDetails";
+            Text = "Film Details";
             FormClosed += FilmDetails_FormClosed;
             ((System.ComponentModel.ISupportInitialize)dgvRatingsFilmDetails).EndInit();
             gbData.ResumeLayout(false);

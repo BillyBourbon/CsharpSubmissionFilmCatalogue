@@ -19,37 +19,43 @@ namespace CsharpSubmissionFilmCatalogue
         }
         private async void btnSearch_Click(object sender, EventArgs e)
         {
+            //Get the inputted film name
             string filmName = tbFilmName.Text;
-            string apiCall = await new OMDBAPI().QueryString(filmName).Fetch();
 
+            //Make request to OMDB's API
+            string apiCall = await new OMDBAPI().SetQuery(filmName).Fetch();
+
+            //Create options for the JSON Serializer so it can deserialize the returnt API call into the type 'Film'
             var options = new JsonSerializerOptions();
+            //API is not operated by myself as such its subject to change so this options property helps prevent some errors from minor
+            //Changes to the API
             options.PropertyNameCaseInsensitive = true;
 
             try
             {
                 Film filmObj = JsonSerializer.Deserialize<Film>(apiCall, options);
 
-                Film.AddNewFilmToFile("films.txt", filmObj);
+                Film.AddNewFilmToFile(Global.filmsFilepath, filmObj);
 
-                lblFilmName.Text = filmObj.title;
-                lblDescription.Text = filmObj.plot;
-                lblDirector.Text = filmObj.director;
-                lblGenre.Text = filmObj.genre;
-                lblReleased.Text = filmObj.released;
-                lblWriters.Text = filmObj.writer;
-                lblRunTime.Text = filmObj.runtime;
-                lblYear.Text = filmObj.year;
-                lblActors.Text = filmObj.actors;
-                lblLanguage.Text = filmObj.language;
-                lblCountry.Text = filmObj.country;
-                lblAwards.Text = filmObj.awards;
-                lblImdbRating.Text = filmObj.imdbRating;
-                lblMetascore.Text = filmObj.metascore;
-                lblWebsite.Text = filmObj.website;
-                lblDvd.Text = filmObj.dvd;
-                lblBoxOffice.Text = filmObj.boxOffice;
-                lblImdbVotes.Text = filmObj.imdbVotes;
-                lblType.Text = filmObj.type;
+                lblFilmName.Text = filmObj.Title;
+                lblDescription.Text = filmObj.Plot;
+                lblDirector.Text = filmObj.Director;
+                lblGenre.Text = filmObj.Genre;
+                lblReleased.Text = filmObj.Released;
+                lblWriters.Text = filmObj.Writer;
+                lblRunTime.Text = filmObj.Runtime;
+                lblYear.Text = filmObj.Year;
+                lblActors.Text = filmObj.Actors;
+                lblLanguage.Text = filmObj.Language;
+                lblCountry.Text = filmObj.Country;
+                lblAwards.Text = filmObj.Awards;
+                lblImdbRating.Text = filmObj.ImdbRating;
+                lblMetascore.Text = filmObj.Metascore;
+                lblWebsite.Text = filmObj.Website;
+                lblDvd.Text = filmObj.Dvd;
+                lblBoxOffice.Text = filmObj.BoxOffice;
+                lblImdbVotes.Text = filmObj.ImdbVotes;
+                lblType.Text = filmObj.Type;
             }
             catch
             {

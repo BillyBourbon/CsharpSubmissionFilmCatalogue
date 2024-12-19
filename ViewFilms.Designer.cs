@@ -114,7 +114,7 @@
             Controls.Add(btnPageLeftViewFilms);
             Controls.Add(dgvFilmsView);
             Name = "ViewFilms";
-            Text = "ViewFilms";
+            Text = "View Stored Films";
             ((System.ComponentModel.ISupportInitialize)dgvFilmsView).EndInit();
             ResumeLayout(false);
         }

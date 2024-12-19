@@ -1,6 +1,7 @@
 ﻿
 namespace CsharpSubmissionFilmCatalogue
 {
+    //Provides the details of a film
     public partial class FilmDetails : Form
     {
         public FilmDetails()
@@ -11,32 +12,31 @@ namespace CsharpSubmissionFilmCatalogue
         private void LoadFilmDetails()
         {
             Film film = ViewFilms.selectedFilm;
-            Console.WriteLine(film);
 
-            film.ratings.ToList().ForEach(rating => dgvRatingsFilmDetails.Rows.Add([rating.source, rating.value]));
+            film.Ratings.ToList().ForEach(rating => dgvRatingsFilmDetails.Rows.Add([rating.Source, rating.Value]));
 
-            lblActorsFilmDetails.Text = film.actors;
-            lblAwardsFilmDetails.Text = film.awards;
-            lblBoxOfficeFilmDetails.Text = film.boxOffice;
-            lblCountryFilmDetails.Text = film.country;
-            lblDescription.Text = film.plot;
-            lblDirectorFilmDetails.Text = film.director;
-            lblDvdFilmDetails.Text = film.dvd;
-            lblFilmNameFilmDetails.Text = film.title;
-            lblGenreFilmDetails.Text = film.genre;
-            lblImdbRatingFilmDetails.Text = film.imdbRating;
-            lblImdbVotesFilmDetails.Text = film.imdbVotes;
-            lblLanguageFilmDetails.Text = film.language;
-            lblMetascoreFilmDetails.Text = film.metascore;
-            lblReleasedFilmDetails.Text = film.released;
-            lblRunTimeFilmDetails.Text = film.runtime;
-            lblTypeFilmDetails.Text = film.type;
-            lblWebsiteFilmDetails.Text = film.website;
-            lblWritersFilmDetails.Text = film.writer;
-            lblYearFilmDetails.Text = film.year;
-
+            lblActorsFilmDetails.Text = film.Actors;
+            lblAwardsFilmDetails.Text = film.Awards;
+            lblBoxOfficeFilmDetails.Text = film.BoxOffice;
+            lblCountryFilmDetails.Text = film.Country;
+            lblDescription.Text = film.Plot;
+            lblDirectorFilmDetails.Text = film.Director;
+            lblDvdFilmDetails.Text = film.Dvd;
+            lblFilmNameFilmDetails.Text = film.Title;
+            lblGenreFilmDetails.Text = film.Genre;
+            lblImdbRatingFilmDetails.Text = film.ImdbRating;
+            lblImdbVotesFilmDetails.Text = film.ImdbVotes;
+            lblLanguageFilmDetails.Text = film.Language;
+            lblMetascoreFilmDetails.Text = film.Metascore;
+            lblReleasedFilmDetails.Text = film.Released;
+            lblRunTimeFilmDetails.Text = film.Runtime;
+            lblTypeFilmDetails.Text = film.Type;
+            lblWebsiteFilmDetails.Text = film.Website;
+            lblWritersFilmDetails.Text = film.Writer;
+            lblYearFilmDetails.Text = film.Year;
         }
 
+        //Reset selected film when form is closed
         private void FilmDetails_FormClosed(object sender, FormClosedEventArgs e)
         {
             ViewFilms.selectedFilm = new Film();

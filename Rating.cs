@@ -3,8 +3,9 @@ namespace CsharpSubmissionFilmCatalogue
 {
     public class Rating
     {
-        public string source { get; set; }
-        public string value { get; set; }
+        //Potentially null in API responce
+        public string? Source { get; set; }
+        public string? Value { get; set; }
     }
 }
 

@@ -1,5 +1,6 @@
 namespace CsharpSubmissionFilmCatalogue
 {
+    //Entry point of the application allowing the user to select what to do
     public partial class MainMenu : Form
     {
         public MainMenu()
@@ -9,8 +10,8 @@ namespace CsharpSubmissionFilmCatalogue
 
         private void btnFindFilm_Click(object sender, EventArgs e)
         {
-            Form findActor = new FindFilm();
-            findActor.ShowDialog();
+            Form findFilm = new FindFilm();
+            findFilm.ShowDialog();
         }
 
         private void btnViewFilmDB_Click(object sender, EventArgs e)

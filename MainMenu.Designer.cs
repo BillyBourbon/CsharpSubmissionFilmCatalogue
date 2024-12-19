@@ -43,7 +43,6 @@
             gbNav.Size = new Size(776, 87);
             gbNav.TabIndex = 0;
             gbNav.TabStop = false;
-            gbNav.Text = "NavGroup";
             // 
             // btnViewFilmDB
             // 
@@ -72,7 +71,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(gbNav);
             Name = "MainMenu";
-            Text = "Form1";
+            Text = "Main Menu";
             gbNav.ResumeLayout(false);
             ResumeLayout(false);
         }

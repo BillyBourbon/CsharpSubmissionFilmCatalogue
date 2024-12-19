@@ -490,7 +490,7 @@
             Controls.Add(gbData);
             Controls.Add(gbControls);
             Name = "FindFilm";
-            Text = "Find_Film";
+            Text = "Find Film";
             gbControls.ResumeLayout(false);
             gbControls.PerformLayout();
             gbData.ResumeLayout(false);

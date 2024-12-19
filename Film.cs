@@ -2,36 +2,41 @@
 using System.Text.Json.Nodes;
 namespace CsharpSubmissionFilmCatalogue
 {
+    //Requires Class 'Rating.cs'
+    //Class to deserialize the JSON responce from OMDB's API into
+    //Also allows the programme to Read/Write to a text(.txt) file
     public class Film
     {
-        public string title { get; set; }
-        public string year { get; set; }
-        public string rated { get; set; }
-        public string released { get; set; }
-        public string runtime { get; set; }
-        public string genre { get; set; }
-        public string director { get; set; }
-        public string writer { get; set; }
-        public string actors { get; set; }
-        public string plot { get; set; }
-        public string language { get; set; }
-        public string country { get; set; }
-        public string awards { get; set; }
-        public string poster { get; set; }
-        public string metascore { get; set; }
-        public string imdbRating { get; set; }
-        public string imdbVotes { get; set; }
-        public string type { get; set; }
-        public string dvd { get; set; }
-        public string boxOffice { get; set; }
-        public string website { get; set; }
-        public string response { get; set; }
-        public List<Rating> ratings { get; set; }
+
+        public string? Title { get; set; }
+        public string? Year { get; set; }
+        public string? Rated { get; set; }
+        public string? Released { get; set; }
+        public string? Runtime { get; set; }
+        public string? Genre { get; set; }
+        public string? Director { get; set; }
+        public string? Writer { get; set; }
+        public string? Actors { get; set; }
+        public string? Plot { get; set; }
+        public  string? Language { get; set; }
+        public string? Country { get; set; }
+        public string? Awards { get; set; }
+        public string? Poster { get; set; }
+        public string? Metascore { get; set; }
+        public string? ImdbRating { get; set; }
+        public string? ImdbVotes { get; set; }
+        public string? Type { get; set; }
+        public string? Dvd { get; set; }
+        public string? BoxOffice { get; set; }
+        public string? Website { get; set; }
+        public string? Response { get; set; }
+        public List<Rating>? Ratings { get; set; }
+        
         public static string LoadFileAsString(string filepath)
         {
             if (!File.Exists(filepath))
             {
-                string defaultFileText = "{ \"films\" : [] }";
+                string defaultFileText = "";
                 File.WriteAllText(filepath, defaultFileText);
             }
 
@@ -39,56 +44,17 @@ namespace CsharpSubmissionFilmCatalogue
 
             return fileText;
         }
-        public static JsonNode LoadFileAsJson(string filepath)
-        {
-            string fileText = LoadFileAsString(filepath);
-            string fileTextEdit = string.Join(",", fileText);
-            JsonNode json = JsonArray.Parse(fileTextEdit);
-
-            return json;
-        }
-        public static void AddNewFilmsToFile(string filepath, List<Film> films)
-        {
-            List<string> lines = new List<string>();
-
-            films.ForEach(film => {
-                string filmString = JsonSerializer.Serialize(film);
-                if (film.response == "False" || CheckIsDuplicate(Global.filmsFilepath, filmString)) return;
-                lines.Add(filmString);
-                });
-
-            if (!File.Exists(filepath))
-            {
-                File.WriteAllLines(filepath, lines);
-            }
-            else
-            {
-                File.AppendAllLines(filepath, lines);
-            }
-
-        }
         public static void AddNewFilmToFile(string filepath, Film film)
         {
-            if (film.response == "False") return;
-
+            if (film.Response == "False") return;
+            //Make use of Serialization to convert the Film Object into a string which can then be stored 
             string filmString = JsonSerializer.Serialize(film);
+
             if (CheckIsDuplicate(Global.filmsFilepath, filmString)) return;
             
             List<string> lines = new List<string>();
             lines.Add(filmString);
-            if (!File.Exists(filepath))
-            {
-                File.WriteAllLines(filepath, lines);
-            }
-            else
-            {
-                File.AppendAllLines(filepath, lines);
-            }
-        }
-        public static void AddNewFilmToFile(string filepath, string film)
-        {
-            List<string> lines = new List<string>();
-            lines.Add(film);
+            
             if (!File.Exists(filepath))
             {
                 File.WriteAllLines(filepath, lines);
@@ -101,6 +67,7 @@ namespace CsharpSubmissionFilmCatalogue
         private static bool CheckIsDuplicate(string filepath, string film)
         {
             bool isDuplicate = false;
+
             if(File.Exists(filepath))
             {
                 List<string> fileLines = File.ReadAllLines(filepath).ToList();
@@ -109,6 +76,5 @@ namespace CsharpSubmissionFilmCatalogue
 
             return isDuplicate;
         }
-
     }
 }
